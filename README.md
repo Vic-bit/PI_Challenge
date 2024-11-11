@@ -15,6 +15,7 @@ Este proyecto es una API de preguntas y respuestas basada en FastAPI, diseñada 
 
 ## Estructura del Proyecto
 
+```python
 PI_Challenge
 ├── /app
 │   ├── /routers
@@ -26,6 +27,7 @@ PI_Challenge
 │   └── /documento.docx     # Documento a usar por el RAG        
 ├── requirements.txt        # Dependencias necesarias
 └── README.md               # Documentación del proyecto
+```
 
 ## Instalación
 
@@ -33,44 +35,44 @@ El proyecto fue desarrollado en python, requiere python>=3.8.
 
 1. Para clonar el repositorio localmente, dirijirse al directorio deseado y ejecutar:
 
-'''
+```python
 git clone https://github.com/Vic-bit/PI_Challenge.git
 cd PI_Challenge
-'''
+```
 
 2. Se recomienda crear un entorno virtual para evitar conflictos con otras instalaciones en el sistema. Tenga en cuenta de que debe crear fuera de la carpeta del proyecto el entorno virtual o incluirlo en .gitignore.
 
 - Crear entorno vitual para Windows:
 
-'''
+```python
 python -m venv pienv
-'''
+```
 
 - Crear entorno global para macOS o Linux:
 
-'''
+```python
 python3 -m venv pienv
-'''
+```
 
 3. Activar el entorno virtual 
 
 - En Windows:
 
-'''
+```python
 pienv\Scripts\activate
-'''
+```
 
 - En macOS y Linux:
 
-'''
+```python
 source pienv/bin/activate
-'''
+```
 
 4. Instalar las dependencias desde requirements.txt:
 
-'''
+```python
 pip install -r requirements.txt
-'''
+```
 
 5. Por razones de seguridad la API key de Cohere se agregó a .gitignore. Se recomienda crear una API key de Cohere desde su página web, por lo que debe registrarse:
 https://dashboard.cohere.com/welcome/login 
@@ -83,36 +85,35 @@ Econtrará las Trial keys de las cuales ya tiene por default su key, la cual pue
 
 Crear en el proyecto un archivo .env en la carpeta raíz y crear una variable, copiar la api key y pegarla para asignar a la variable cohere_api_key sin las comillas:
 
-'''
+```python
 cohere_api_key = "ingrese aquí su api key de cohere"
-'''
+```
 
 ## Uso 
 Una vez realizada la instalación solo resta ejecutar la aplicación y realizar consultas.
 
 1. Desde la terminal ejecutar el siguiente comando bash:
 
-'''
+```python
 uvicorn app.main:app --reload
-
-'''
+```
 
 Esto iniciará el servidor en http://127.0.0.1:8000.
 
 2. Ingresar al localhost desde su browser:
 
-'''
+```python
 http://127.0.0.1:8000/docs
-'''
+```
 
 3. Para realizar una pregunta, envía una solicitud POST al endpoint /ask con el siguiente formato:
 
-'''
+```python
 {
   "user_name": "NombreUsuario",
   "question": "Tu pregunta aquí"
 }
-'''
+```
 
 La API devolverá una respuesta en el mismo idioma, en una oración clara y concisa con emojis de resumen.
 
