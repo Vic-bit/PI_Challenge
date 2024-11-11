@@ -32,19 +32,28 @@ def open_content(path):
     
     return content
 
+def count_tokens(text):
+    # Llamar a la API de Cohere para contar los tokens en el texto
+    response = cohere_client.tokenize(text=text, model="command")
+    return len(response.tokens)
+
 # Divide en fragmentos a content y lo agrega a collection
 def process_and_add_to_db(content, collection):
     # Instanciar RecursiveCharacterTextSplitter para agregar contenido a Chroma
     text_splitter = RecursiveCharacterTextSplitter(
         separators=["\n\n", "\n"], 
-        chunk_size=200, 
-        chunk_overlap=30
+        chunk_size=175, 
+        chunk_overlap=50
     )
 
     # Dividir el content en fragmentos
     docs = text_splitter.create_documents([content])
 
-    for doc in docs:
+
+    for i, doc in enumerate(docs):
+        # Mostrar la cantidad de tokens por documento
+        print(f"Cantidad de tokens del párrafo {i+1}: {count_tokens(doc.page_content)}")
+
         # Generar identificador único 
         uuid_name = str(uuid.uuid1())
 
