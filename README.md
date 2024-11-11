@@ -137,7 +137,7 @@ La API devolverá una respuesta en el mismo idioma, en una oración clara y conc
 - Resposta: "Zara é um intrépido explorador de la distante galaxia de Zenthoria. 🌌🏃‍♀️ É a arqueólogo que descobre um antigo artefacto que"
 
 
-## Conclución
+## Conclusión
 
 Se implementó un sistema RAG que permite a los usuarios obtener respuestas basadas en un documento cargado. Se utilizó Cohere para generar embeddings y ChromaDB para buscar información relevante, todo accesible a través de una API de FastAPI.
 
