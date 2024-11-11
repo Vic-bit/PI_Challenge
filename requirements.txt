@@ -1,0 +1,7 @@
+fastapi
+python-dotenv
+cohere
+chromadb
+langchain
+python-docx
+lxml
