@@ -1,1 +1,118 @@
 # PI_Challenge
+
+## Descipción
+
+Este proyecto es una API de preguntas y respuestas basada en FastAPI, diseñada para responder a consultas en el mismo idioma en el que se realizan. La aplicación utiliza embeddings de Cohere para analizar las preguntas, ChromaDB para buscar contexto relevante en una base de datos de vectores, y ofrece respuestas concisas y en tercera persona. El proyecto admite múltiples idiomas (español, inglés y portugués) y emplea una arquitectura modular y escalable.
+
+![image](https://github.com/user-attachments/assets/ea1ab16d-a905-49a5-8666-fe70e53e054e)
+
+## Características
+
+- **Multi-idioma**: La API detecta el idioma de la pregunta y responde en el mismo idioma (español, inglés o portugués).
+- **Integración con Cohere y ChromaDB**: Utiliza Cohere para generar embeddings y ChromaDB para consultar el contexto más relevante.
+- **Respuesta concisa y resumida**: Las respuestas son concisas, en tercera persona y acompañadas de emojis que resumen el contenido.
+- **Configuración de dependencias**: Se proporciona un archivo `requirements.txt` con todas las dependencias necesarias.
+
+## Estructura del Proyecto
+
+PI_Challenge
+├── /app
+│   ├── /routers
+│   │   ├──__init__.py      # Archivo recomendado en la documentación
+│   │   └── ask.py          # Se definen las rutas de las preguntas
+│   ├── main.py             # Se inicializa FastAPI y se incluyen los routers
+│   └── dependencies.py     # Se inicaliza Cohere y Chroma además de tener funciones útiles
+├── /static   
+│   └── /documento.docx     # Documento a usar por el RAG        
+├── requirements.txt        # Dependencias necesarias
+└── README.md               # Documentación del proyecto
+
+## Instalación
+
+El proyecto fue desarrollado en python, requiere python>=3.8.
+
+1. Para clonar el repositorio localmente, dirijirse al directorio deseado y ejecutar:
+
+'''
+git clone https://github.com/Vic-bit/PI_Challenge.git
+cd PI_Challenge
+'''
+
+2. Se recomienda crear un entorno virtual para evitar conflictos con otras instalaciones en el sistema. Tenga en cuenta de que debe crear fuera de la carpeta del proyecto el entorno virtual o incluirlo en .gitignore.
+
+- Crear entorno vitual para Windows:
+
+'''
+python -m venv pienv
+'''
+
+- Crear entorno global para macOS o Linux:
+
+'''
+python3 -m venv pienv
+'''
+
+3. Activar el entorno virtual 
+
+- En Windows:
+
+'''
+pienv\Scripts\activate
+'''
+
+- En macOS y Linux:
+
+'''
+source pienv/bin/activate
+'''
+
+4. Instalar las dependencias desde requirements.txt:
+
+'''
+pip install -r requirements.txt
+'''
+
+5. Por razones de seguridad la API key de Cohere se agregó a .gitignore. Se recomienda crear una API key de Cohere desde su página web, por lo que debe registrarse:
+https://dashboard.cohere.com/welcome/login 
+
+Dirgierse a la sección de API Keys:
+https://dashboard.cohere.com/api-keys
+
+Econtrará las Trial keys de las cuales ya tiene por default su key, la cual puede copiar.
+
+
+Crear en el proyecto un archivo .env en la carpeta raíz y crear una variable, copiar la api key y pegarla para asignar a la variable cohere_api_key sin las comillas:
+
+'''
+cohere_api_key = "ingrese aquí su api key de cohere"
+'''
+
+## Uso 
+Una vez realizada la instalación solo resta ejecutar la aplicación y realizar consultas.
+
+1. Desde la terminal ejecutar el siguiente comando bash:
+
+'''
+uvicorn app.main:app --reload
+
+'''
+
+Esto iniciará el servidor en http://127.0.0.1:8000.
+
+2. Ingresar al localhost desde su browser:
+
+'''
+http://127.0.0.1:8000/docs
+'''
+
+3. Para realizar una pregunta, envía una solicitud POST al endpoint /ask con el siguiente formato:
+
+'''
+{
+  "user_name": "NombreUsuario",
+  "question": "Tu pregunta aquí"
+}
+'''
+
+La API devolverá una respuesta en el mismo idioma, en una oración clara y concisa con emojis de resumen.
+
