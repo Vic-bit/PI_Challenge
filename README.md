@@ -33,7 +33,7 @@ PI_Challenge
 
 El proyecto fue desarrollado en python, requiere python>=3.8.
 
-1. Para clonar el repositorio localmente, dirijirse al directorio deseado y ejecutar:
+1. Para clonar el repositorio localmente, dirigirse al directorio deseado y ejecutar:
 
 ```python
 git clone https://github.com/Vic-bit/PI_Challenge.git
@@ -74,16 +74,15 @@ source pienv/bin/activate
 pip install -r requirements.txt
 ```
 
-5. Por razones de seguridad la API key de Cohere se agregó a .gitignore. Se recomienda crear una API key de Cohere desde su página web, por lo que debe registrarse:
+5. Por razones de seguridad la API key de Cohere se agregó a .gitignore. Se recomienda crear una API key de Cohere desde su página web
+
+- Debe registrarse:
 https://dashboard.cohere.com/welcome/login 
 
-Dirgierse a la sección de API Keys:
+- Dirgierse a la sección de API Keys donde econtrará las Trial keys de las cuales ya tiene por default su key, la cual puede copiar.
 https://dashboard.cohere.com/api-keys
 
-Econtrará las Trial keys de las cuales ya tiene por default su key, la cual puede copiar.
-
-
-Crear en el proyecto un archivo .env en la carpeta raíz y crear una variable, copiar la api key y pegarla para asignar a la variable cohere_api_key sin las comillas:
+- Crear en el proyecto un archivo .env en la carpeta raíz y crear una variable, copiar la api key y pegarla para asignar a la variable cohere_api_key sin las comillas:
 
 ```python
 cohere_api_key = "ingrese aquí su api key de cohere"
