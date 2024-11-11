@@ -120,18 +120,21 @@ La API devolverá una respuesta en el mismo idioma, en una oración clara y conc
 ## Ejemplos
 
 #### Pregunta en español
-Pregunta: "¿Quién es Zara?"
-Respuesta: "Zara es un intrépido explorador del universo de Zenthoria, que viaja de planeta a planeta en busca de la paz. 🪐 \n\n¿Cómo le va en"
+
+- Pregunta: "¿Quién es Zara?"
+- Respuesta: "Zara es un intrépido explorador del universo de Zenthoria, que viaja de planeta a planeta en busca de la paz. 🪐 \n\n¿Cómo le va en"
 
 
 #### Pregunta en inglés
-Question: "Who is Zara?"
-Answer: "Zara is an intrepid explorer in the distant galactic galaxy of Zenthoria, who discovers an ancient artifact that may hold the key to peace between two alien civilizations on the brink of intergalactic war. ⭐️🪐�"
+
+- Question: "Who is Zara?"
+- Answer: "Zara is an intrepid explorer in the distant galactic galaxy of Zenthoria, who discovers an ancient artifact that may hold the key to peace between two alien civilizations on the brink of intergalactic war. ⭐️🪐�"
 
 
 #### Pregunta en portugués
-Pergunta: "Quem é a Zara?"
-Resposta: "Zara é um intrépido explorador de la distante galaxia de Zenthoria. 🌌🏃‍♀️ É a arqueólogo que descobre um antigo artefacto que"
+
+- Pergunta: "Quem é a Zara?"
+- Resposta: "Zara é um intrépido explorador de la distante galaxia de Zenthoria. 🌌🏃‍♀️ É a arqueólogo que descobre um antigo artefacto que"
 
 
 ## Conclución
